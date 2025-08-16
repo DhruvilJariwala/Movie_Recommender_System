@@ -1,0 +1,97 @@
+:root {
+  --card: #f5f4f4;
+  --text: #969798;
+  --muted: #6b7280;
+  --ring: #5b6cff;
+  --border: #e7e7ef;
+  --shadow: 0 10px 25px rgba(24, 32, 56, 0.08);
+}
+
+.search-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.search-shell {
+  position: relative;
+  width: 350px;                   /* small by default */
+  transition: width 240ms ease, transform 120ms ease;
+}
+
+
+.search-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+  box-shadow: var(--shadow);
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 120ms ease;
+}
+
+.search-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 10px 28px rgba(91, 108, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: fadeIn 160ms ease;
+  z-index: 1000;
+  width: 380px;
+}
+
+.drop-status {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.drop-status.error {
+  color: #c2410c;
+}
+
+.drop-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  max-height: 280px;
+  width: 400px;
+  overflow-y: auto;
+}
+
+.drop-item {
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.drop-item:hover,
+.drop-item.active {
+  background: #eef2ff;
+}
+
+.drop-item.empty {
+  color: var(--muted);
+  cursor: default;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
