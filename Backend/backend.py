@@ -34,3 +34,5 @@ def search_movies(query: str):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="https://movie-recommender-system-ji4l.onrender.com")
+
+    
