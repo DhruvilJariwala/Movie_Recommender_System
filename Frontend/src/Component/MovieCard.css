@@ -36,3 +36,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width:500px){
+  .movie-card{
+    margin: 10% 25%;
+    width: 50%;
+  }
+}

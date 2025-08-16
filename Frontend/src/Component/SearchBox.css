@@ -15,7 +15,7 @@
 
 .search-shell {
   position: relative;
-  width: 350px;                   /* small by default */
+  width: 350px;              
   transition: width 240ms ease, transform 120ms ease;
 }
 
@@ -94,4 +94,16 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width:500px){
+  .search-input{
+   width: 85%;
+   margin: 0% 3%;
+  }
+  .dropdown{
+    width: 88%;
+    margin-left: 5%;
+  }
 }
