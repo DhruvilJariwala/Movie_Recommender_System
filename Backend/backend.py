@@ -33,4 +33,4 @@ def search_movies(query: str):
     return {"results": results['title'].tolist()[:10]}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="https://movie-recommender-system-hvzr.onrender.com")
+    uvicorn.run(app, host="https://movie-recommender-system-ji4l.onrender.com")
