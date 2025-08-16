@@ -5,6 +5,7 @@ import "./App.css";
 import image from "./assets/404.jpeg";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY ;
+const URL= import.meta.env.VITE_BACKEND_URL;
 
 async function fetchPoster(movieName) {
   try {
@@ -32,7 +33,7 @@ export default function App() {
     setRecs([]);
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/recommend?movie=${encodeURIComponent(movieName)}`);
+      const res = await fetch(`${URL}/recommend?movie=${encodeURIComponent(movieName)}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       

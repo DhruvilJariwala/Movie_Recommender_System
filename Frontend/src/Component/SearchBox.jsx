@@ -36,8 +36,9 @@ export default function SearchBox({ onSelect }) {
     debounceRef.current = setTimeout(async () => {
       setLoading(true);
       setErr("");
+      const URL= import.meta.env.VITE_BACKEND_URL;
       try {
-        const res = await fetch(`http://127.0.0.1:8000/search?query=${encodeURIComponent(query.trim())}`);
+        const res = await fetch(`${URL}/search?query=${encodeURIComponent(query.trim())}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setSuggestions(Array.isArray(data.results) ? data.results : []);
